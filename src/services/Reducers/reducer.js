@@ -1,19 +1,25 @@
 import { Add_To_Cart } from "../constants";
+import { Remove_To_Cart } from "../constants";
 
 const initailState = {
-     cartData: []
+    cartData: []
 }
 
-export default function cartItems( state = [], action){
-    switch(action.type){
+export default function cartItems(state = [], action) {
+    switch (action.type) {
         case Add_To_Cart:
             // console.log("reducer", action);
-            return[
+            return [
                 ...state,
-                {cartData: action.data}
+                { cartData: action.data }
             ]
-            break;
-            default: 
-                return state
+        case Remove_To_Cart:
+            // console.log("reducer", action);
+            state.pop();
+            return [
+                ...state
+            ]
+        default:
+            return state
     }
 }

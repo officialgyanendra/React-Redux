@@ -1,11 +1,9 @@
 import React from 'react'
 
 const Home = (props) => {
-    console.log("Home",props.cartData);
+    // console.log("Home", props);
     return (
         <div>
-            <span className='cart-Count'>{props.cartData.length}</span>
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/000/496/007/small/Ecommerce_998.jpg" className='img-cart'/>
             <h1>Mobile Shop</h1>
             <div className="cart-wrapper">
                 <div className="img-wrapper item">
@@ -22,9 +20,16 @@ const Home = (props) => {
                 <div className="btn-wrapper item">
                     <button
                         onClick={
-                            ()=>{props.addToCartHandle({pice:1000,name:'i phone 11'})}
+                            () => { props.addToCartHandle({ pice: 1000, name: 'i phone 11' }) }
                         }>
-                        Add To Cart</button>
+                        Add To Cart
+                    </button>
+                    <button className='remove-button'
+                        onClick={
+                            () => { props.removeToCartHandle() }
+                        }>
+                        Remove To Cart
+                    </button>
                 </div>
             </div>
         </div>

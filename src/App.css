@@ -25,6 +25,11 @@
   border-radius: 50%;
 }
 
+.remove-button {
+  background: cadetblue !important;
+  margin-top: 4px;
+}
+
 .btn-wrapper button {
   background-color: red;
   border: 0px;
